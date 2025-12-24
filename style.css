@@ -1,0 +1,45 @@
+/* --- CORE STYLES --- */
+body { 
+    background-color: #f3f4f6; 
+    -webkit-tap-highlight-color: transparent; 
+}
+
+/* Scrollbar Hiding */
+.hide-scrollbar::-webkit-scrollbar { display: none; }
+.hide-scrollbar { -ms-overflow-style: none; scrollbar-width: none; }
+
+/* Inputs */
+.pin-input {
+    letter-spacing: 0.5em;
+    text-align: center;
+    font-size: 1.5rem;
+    -webkit-text-security: disc;
+}
+
+/* Animations */
+.fade-in { animation: fadeIn 0.3s ease-in-out; }
+@keyframes fadeIn { 
+    from { opacity: 0; transform: translateY(5px); } 
+    to { opacity: 1; transform: translateY(0); } 
+}
+
+/* Search Dropdown */
+.search-dropdown {
+    transform-origin: top;
+    transition: all 0.2s ease-out;
+}
+.search-dropdown.hidden { opacity: 0; transform: scaleY(0.95); pointer-events: none; }
+.search-dropdown.visible { opacity: 1; transform: scaleY(1); pointer-events: auto; }
+
+/* Mobile Specifics */
+.pb-safe { padding-bottom: env(safe-area-inset-bottom); }
+
+/* Calendar Grid */
+.calendar-grid {
+    display: grid;
+    grid-template-columns: 60px repeat(7, 1fr);
+    gap: 1px;
+    background-color: #e5e7eb;
+}
+.calendar-cell { background-color: white; min-height: 3rem; position: relative; }
+.calendar-header { background-color: #f9fafb; padding: 0.5rem; text-align: center; font-weight: 600; font-size: 0.75rem; }
